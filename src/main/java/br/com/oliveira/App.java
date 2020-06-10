@@ -16,6 +16,16 @@ public class App
 
     public static void main( String[] args )
     {
+        String source = args[0];
+        String linha = "";
+
         DaoCartorios dao = new DaoCartorios();
+        ReadFile lerArqrobo = new ReadFile(source);
+
+        linha = lerArqrobo.lerLinha();
+
+
+
+
     }
 }
