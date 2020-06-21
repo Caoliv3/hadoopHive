@@ -24,7 +24,14 @@ public class App
 
         linha = lerArqrobo.lerLinha();
 
+        do{
+            ModelProtesto protesto = new ModelProtesto(linha);
+            int codigoBvs = dao.selecionaCartorio(protesto.getGetddd(), protesto.getGetNumTel());
+            protesto.setCartorio(String.valueOf(codigoBvs));
+            dao.Insert(protesto);
+            linha = lerArqrobo.lerLinha();
 
+        }while(linha != null);
 
 
     }

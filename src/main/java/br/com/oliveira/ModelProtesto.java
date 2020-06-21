@@ -39,10 +39,12 @@ public class ModelProtesto {
     private String endereco = "";
     private static String numdd = "";
     private static String telefone = "";
+    private String fone="";
     private String qtdeProtesto = "";
     private String dtProtesto = "";
     private String dtVencimento = "";
-    private String valorProtesto = "";
+    private String valorProt = "";
+    private int valorProtesto = 0;
     public String getCodigoBusca = "";
     public String getTelefone = "";
     private String codCartorioBvs = "";
@@ -93,10 +95,12 @@ public class ModelProtesto {
         }
 
         if (!linha[12].equals("")) {
-            valorProtesto = linha[12];
-            valorProtesto = String.format("%016d", Long.valueOf(valorProtesto.replace(".", "")));
+            valorProt = linha[12];
+            valorProt = String.format("%016d", Long.valueOf(valorProt.replace(".", "")));
+            valorProtesto = Integer.parseInt(String.valueOf(valorProt));
         } else {
-            valorProtesto = String.format("%-16s", valorProtesto);
+            valorProt = String.format("%-16s", valorProtesto);
+            valorProtesto = Integer.parseInt(String.valueOf(valorProt));
         }
 
         if (!linha[15].equals("")) {
@@ -184,6 +188,7 @@ public class ModelProtesto {
         }
 
         telefone = String.format("%09d", numTel);
+
 
     }
 
